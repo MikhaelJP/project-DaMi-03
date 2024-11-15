@@ -1,4 +1,4 @@
-# 👨‍💼 Group 11: Sample BPJS 2015-2021 (Case 1)
+# 👨‍💼 Group 03: Case 3: House Prices - Advanced Regression Techniques Using XGBoost (Case 3)
 
 ### 📊 Business Understanding
 
