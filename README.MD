@@ -2,13 +2,16 @@
 
 ### 📊 Business Understanding
 
-Proyek House Prices - Advanced Regression Techniques ini bertujuan untuk memprediksi harga rumah secara akurat berdasarkan berbagai karakteristik rumah. 
-Dalam konteks bisnis, memahami faktor-faktor yang memengaruhi harga rumah sangat penting bagi pengembang properti, agen real estate, dan pembeli. 
-Dengan model yang akurat, perusahaan dapat menilai harga rumah secara objektif, mengurangi risiko dalam transaksi, dan memberikan penawaran yang lebih kompetitif di pasar.
+Proyek ini bertujuan untuk memprediksi harga rumah menggunakan metode Advanced Regression Techniques dengan algoritma XGBoost. 
+Dalam industri properti, harga rumah dipengaruhi oleh banyak faktor, seperti lokasi, ukuran, jumlah kamar, dan kondisi pasar. 
+Penentuan harga rumah yang akurat sangat penting bagi agen properti, investor, dan pembeli untuk membuat keputusan yang lebih informatif.
 ### 📂 Data Understanding
 
-Gambaran tentang data yang digunakan, termasuk sumber data, jenis data, dan deskripsi ringkas variabel penting.
+Dataset yang digunakan terdiri dari tiga file utama:
 
+1. train.csv: Dataset utama yang berisi data historis harga rumah dengan berbagai fitur, seperti jumlah kamar, ukuran properti, lokasi, dan harga rumah sebagai variabel target.
+2. test.csv : Dataset yang berisi fitur-fitur serupa tanpa nilai target (harga rumah), yang akan digunakan untuk menguji model prediksi.
+3. sample_submission.csv: Template untuk mengunggah hasil prediksi harga rumah pada dataset uji (test.csv).
 ### 🔄 Data Preparation
 
 Proses persiapan data seperti pembersihan, transformasi, dan pengaturan data agar siap digunakan dalam pemodelan.
