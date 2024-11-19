@@ -2,8 +2,9 @@
 
 ### 📊 Business Understanding
 
-Menjelaskan tujuan analisis, latar belakang, dan pemahaman bisnis yang menjadi dasar proyek ini.
-
+Proyek House Prices - Advanced Regression Techniques ini bertujuan untuk memprediksi harga rumah secara akurat berdasarkan berbagai karakteristik rumah. 
+Dalam konteks bisnis, memahami faktor-faktor yang memengaruhi harga rumah sangat penting bagi pengembang properti, agen real estate, dan pembeli. 
+Dengan model yang akurat, perusahaan dapat menilai harga rumah secara objektif, mengurangi risiko dalam transaksi, dan memberikan penawaran yang lebih kompetitif di pasar.
 ### 📂 Data Understanding
 
 Gambaran tentang data yang digunakan, termasuk sumber data, jenis data, dan deskripsi ringkas variabel penting.
