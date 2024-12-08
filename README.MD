@@ -27,5 +27,5 @@ Evaluasi performa model berdasarkan metrik yang relevan untuk menilai keberhasil
 ## Contributors
 
 - 12S21009 - Mikhael Janugrah Pakpahan ([@GMikhaelJP](https://github.com/GMikhaelJP))
-- 12S21010 - Bobby Willy Siagian ([@Bobbywilly]
+- 12S21010 - Bobby Willy Siagian ([@Bobbywilly] (https://github.com/Bobbywilly)
 - 12S21011 - Aldi Jeremy Simamora ([@aldijeremysimamora](https://github.com/aldijeremysimamora))
