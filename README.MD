@@ -1,4 +1,4 @@
-# 👨‍💼 Group 03: Case 3: House Prices - Advanced Regression Techniques Using XGBoost
+# 👨‍💼 Group 03 : House Prices - Advanced Regression Techniques Using XGBoost
 
 ### 📊 Business Understanding
 
