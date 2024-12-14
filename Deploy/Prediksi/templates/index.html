@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        label, input, select, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+    {% if prediction_text %}
+        <p style="color: green;">{{ prediction_text }}</p>
+    {% elif error_text %}
+        <p style="color: red;">{{ error_text }}</p>
+    {% endif %}
+    <form action="/predict" method="POST">
+        <label for="Neighborhood">Neighborhood:</label>
+        <select name="Neighborhood" required>
+            <option value="CollgCr">CollgCr</option>
+            <option value="Veenker">Veenker</option>
+            <option value="Crawfor">Crawfor</option>
+        </select>
+
+        <label for="OverallQual">Overall Quality:</label>
+        <input type="number" name="OverallQual" required>
+
+        <label for="RoofMatl">Roof Material:</label>
+        <select name="RoofMatl" required>
+            <option value="CompShg">CompShg</option>
+            <option value="Metal">Metal</option>
+            <option value="WdShake">WdShake</option>
+        </select>
+
+        <label for="BsmtQual">Basement Quality:</label>
+        <select name="BsmtQual" required>
+            <option value="Ex">Excellent</option>
+            <option value="Gd">Good</option>
+            <option value="TA">Typical/Average</option>
+        </select>
+
+        <label for="CentralAir">Central Air (Yes/No):</label>
+        <select name="CentralAir" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="1stFlrSF">1st Floor Square Feet:</label>
+        <input type="number" name="1stFlrSF" required>
+
+        <label for="GrLivArea">Ground Living Area:</label>
+        <input type="number" name="GrLivArea" required>
+
+        <label for="FullBath">Full Bathrooms:</label>
+        <input type="number" name="FullBath" required>
+
+        <label for="KitchenQual">Kitchen Quality:</label>
+        <select name="KitchenQual" required>
+            <option value="Ex">Excellent</option>
+            <option value="Gd">Good</option>
+            <option value="TA">Typical/Average</option>
+        </select>
+
+        <label for="GarageCars">Garage Cars:</label>
+        <input type="number" name="GarageCars" required>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
