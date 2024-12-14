@@ -1,4 +1,4 @@
-# 👨‍💼 Group 03: Case 3: House Prices - Advanced Regression Techniques Using XGBoost
+# 👨‍💼 Group 03 : House Prices - Advanced Regression Techniques Using XGBoost
 
 ### 📊 Business Understanding
 
@@ -27,5 +27,5 @@ Evaluasi performa model berdasarkan metrik yang relevan untuk menilai keberhasil
 ## Contributors
 
 - 12S21009 - Mikhael Janugrah Pakpahan ([@GMikhaelJP](https://github.com/GMikhaelJP))
-- 12S21010 - Bobby Willy Siagian ([@BobbywillyP]
+- 12S21010 - Bobby Willy Siagian ([@Bobbywilly] (https://github.com/Bobbywilly)
 - 12S21011 - Aldi Jeremy Simamora ([@aldijeremysimamora](https://github.com/aldijeremysimamora))
