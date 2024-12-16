@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: relative;
+            background-color: #6c63ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: fadeInDown 1s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        header .character {
+            position: absolute;
+            top: 50%;
+            left: -100px;
+            width: 100px;
+            transform: translateY(-50%);
+            animation: moveCharacter 5s linear infinite;
+        }
+
+        @keyframes moveCharacter {
+            0% {
+                left: -100px;
+            }
+            50% {
+                left: 110%;
+            }
+            100% {
+                left: -100px;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            text-align: center;
+            color: #6c63ff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        input, select {
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            transition: box-shadow 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(108, 99, 255, 0.6);
+        }
+
+        button {
+            padding: 15px;
+            font-size: 1rem;
+            background: linear-gradient(45deg, #6c63ff, #8e44ad);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+        }
+
+        .feedback {
+            padding: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .feedback.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .feedback.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .result-section {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .result-section h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .result-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏡 House Price Prediction</h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/189/189001.png" alt="Moving Character" class="character">
+    </header>
+    <main>
+        {% if prediction_text or error_text %}
+        <div class="result-section">
+            {% if prediction_text %}
+                <h2>Prediction Result</h2>
+                <p class="feedback success">{{ prediction_text }}</p>
+            {% elif error_text %}
+                <h2>Error</h2>
+                <p class="feedback error">{{ error_text }}</p>
+            {% endif %}
+        </div>
+        {% endif %}
+        <h2>Input House Details</h2>
+        <form action="/predict" method="POST">
+            <label for="Neighborhood">Neighborhood:</label>
+            <select name="Neighborhood" required>
+                <option value="CollgCr">CollgCr</option>
+                <option value="Veenker">Veenker</option>
+                <option value="Crawfor">Crawfor</option>
+            </select>
+
+            <label for="OverallQual">Overall Quality:</label>
+            <input type="number" name="OverallQual" min="1" max="10" required>
+
+            <label for="RoofMatl">Roof Material:</label>
+            <select name="RoofMatl" required>
+                <option value="CompShg">CompShg</option>
+                <option value="Metal">Metal</option>
+                <option value="WdShake">WdShake</option>
+            </select>
+
+            <label for="BsmtQual">Basement Quality:</label>
+            <select name="BsmtQual" required>
+                <option value="Ex">Excellent</option>
+                <option value="Gd">Good</option>
+                <option value="TA">Typical/Average</option>
+            </select>
+
+            <label for="CentralAir">Central Air (Yes/No):</label>
+            <select name="CentralAir" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="1stFlrSF">1st Floor Square Feet:</label>
+            <input type="number" name="1stFlrSF" min="0" required>
+
+            <label for="GrLivArea">Ground Living Area:</label>
+            <input type="number" name="GrLivArea" min="0" required>
+
+            <label for="FullBath">Full Bathrooms:</label>
+            <input type="number" name="FullBath" min="0" required>
+
+            <label for="KitchenQual">Kitchen Quality:</label>
+            <select name="KitchenQual" required>
+                <option value="Ex">Excellent</option>
+                <option value="Gd">Good</option>
+                <option value="TA">Typical/Average</option>
+            </select>
+
+            <label for="GarageCars">Garage Cars:</label>
+            <input type="number" name="GarageCars" min="0" required>
+
+            <button type="submit">🔮 Predict</button>
+        </form>
+    </main>
+</body>
+</html>
