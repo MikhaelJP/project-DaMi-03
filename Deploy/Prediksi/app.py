@@ -15,12 +15,25 @@ except FileNotFoundError:
 def preprocess_input(data):
     # Map untuk encoding kategori
     encoding_map = {
-        'Neighborhood': {'CollgCr': 0, 'Veenker': 1, 'Crawfor': 2},
-        'RoofMatl': {'CompShg': 0, 'Metal': 1, 'WdShake': 2},
-        'BsmtQual': {'Ex': 0, 'Gd': 1, 'TA': 2},
-        'CentralAir': {'Yes': 1, 'No': 0},
-        'KitchenQual': {'Ex': 0, 'Gd': 1, 'TA': 2}
-    }
+    'Neighborhood': {
+        'CollgCr': 0, 'Veenker': 1, 'Crawfor': 2, 'NAmes': 3, 'Gilbert': 4, 
+        'StoneBr': 5, 'BrDale': 6, 'NPkVill': 7, 'NridgHt': 8, 'Blmngtn': 9, 
+        'NoRidge': 10, 'Somerst': 11, 'SawyerW': 12, 'Sawyer': 13, 
+        'OldTown': 14, 'BrkSide': 15, 'ClearCr': 16, 'SWISU': 17, 
+        'Edwards': 18, 'Blueste': 19, 'IDOTRR': 20, 'Mitchel': 21, 
+        'Timber': 22, 'MeadowV': 23
+    },
+
+    'Exterior1st': {
+    'VinylSd': 0, 'Wd Sdng': 1, 'HdBoard': 2, 'MetalSd': 3, 'Plywood': 4, 
+    'CemntBd': 5, 'WdShing': 6, 'BrkFace': 7, 'AsbShng': 8
+    },
+
+    'RoofMatl': {'CompShg': 0, 'Metal': 1, 'WdShake': 2},
+    'BsmtQual': {'Ex': 0, 'Gd': 1, 'TA': 2},
+    'CentralAir': {'Yes': 1, 'No': 0},
+    'KitchenQual': {'Ex': 0, 'Gd': 1, 'TA': 2}
+}
 
     # Validasi dan konversi input
     try:

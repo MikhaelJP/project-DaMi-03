@@ -208,11 +208,42 @@
         <h2>Input House Details</h2>
         <form action="/predict" method="POST">
             <label for="Neighborhood">Neighborhood:</label>
-            <select name="Neighborhood" required>
-                <option value="CollgCr">CollgCr</option>
-                <option value="Veenker">Veenker</option>
-                <option value="Crawfor">Crawfor</option>
-            </select>
+            <select name="Neighborhood">
+                <option value="NAmes">NAmes</option>
+                <option value="Gilbert">Gilbert</option>
+                <option value="StoneBr">StoneBr</option>
+                <option value="BrDale">BrDale</option>
+                <option value="NPkVill">NPkVill</option>
+                <option value="NridgHt">NridgHt</option>
+                <option value="Blmngtn">Blmngtn</option>
+                <option value="NoRidge">NoRidge</option>
+                <option value="Somerst">Somerst</option>
+                <option value="SawyerW">SawyerW</option>
+                <option value="Sawyer">Sawyer</option>
+                <option value="OldTown">OldTown</option>
+                <option value="BrkSide">BrkSide</option>
+                <option value="ClearCr">ClearCr</option>
+                <option value="SWISU">SWISU</option>
+                <option value="Edwards">Edwards</option>
+                <option value="Blueste">Blueste</option>
+                <option value="IDOTRR">IDOTRR</option>
+                <option value="Mitchel">Mitchel</option>
+                <option value="Timber">Timber</option>
+                <option value="MeadowV">MeadowV</option>
+            </select>    
+            
+            <label for="OverallQual">HouseStyle:</label>
+            <select name="Exterior1st">
+                <option value="VinylSd">Vinyl Siding</option>
+                <option value="Wd Sdng">Wood Siding</option>
+                <option value="HdBoard">Hardboard</option>
+                <option value="MetalSd">Metal Siding</option>
+                <option value="Plywood">Plywood</option>
+                <option value="CemntBd">Cement Board</option>
+                <option value="WdShing">Wood Shingles</option>
+                <option value="BrkFace">Brick Face</option>
+                <option value="AsbShng">Asbestos Shingles</option>
+            </select> 
 
             <label for="OverallQual">Overall Quality:</label>
             <input type="number" name="OverallQual" min="1" max="10" required>
@@ -237,7 +268,7 @@
                 <option value="No">No</option>
             </select>
 
-            <label for="1stFlrSF">1st Floor Square Feet:</label>
+            <label for="1stFlrSF">Exterior1st:</label>
             <input type="number" name="1stFlrSF" min="0" required>
 
             <label for="GrLivArea">Ground Living Area:</label>
