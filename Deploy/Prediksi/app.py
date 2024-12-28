@@ -24,7 +24,7 @@ def preprocess_input(data):
         'Timber': 22, 'MeadowV': 23
     },
 
-    'Exterior1st': {
+    'Exterior1stMaterial': {
     'VinylSd': 0, 'Wd Sdng': 1, 'HdBoard': 2, 'MetalSd': 3, 'Plywood': 4, 
     'CemntBd': 5, 'WdShing': 6, 'BrkFace': 7, 'AsbShng': 8
     },
